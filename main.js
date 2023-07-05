@@ -60,6 +60,8 @@ class Shelly extends utils.Adapter {
                     if (!this.config.mqttusername || this.config.mqttusername.length === 0) { this.log.error('MQTT Username is missing!'); }
                     if (!this.config.mqttpassword || this.config.mqttpassword.length === 0) { this.log.error('MQTT Password is missing!'); }
 
+                    this.log.info('HTTP Username: ' + this.config.user);
+                    this.log.info('HTTP Password: ' + this.config.http_password);
                     this.serverMqtt = new protocolMqtt.MQTTServer(this, objectHelper, this.eventEmitter);
                     this.serverMqtt.listen();
                 }
